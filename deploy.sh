@@ -3,8 +3,6 @@ set -e
 
 cd tmp/metapackage
 
-git checkout ${TRAVIS_BRANCH}
-
 # Decrypt and add private key.
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
