@@ -1,6 +1,7 @@
 {
-    "name": "webflo/drupal-core-strict",
-    "description": "Locked Drupal core dependencies",
+    "name": "balsama/lightning_strict",
+    "type": "metapackage",
+    "description": "Locked Composer dependencies for Lightning Drupal distribution releases.",
     "license": "GPL-2.0+",
     "require": {
         "gitonomy/gitlib": "^1.0",
