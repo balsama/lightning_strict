@@ -24,6 +24,10 @@ class PackageBuilder {
   public function buildPackage() {
     $composer = $this->defaultMetadata();
 
+    // Lightning composer.lock files are generated with php 7.0, so certain
+    // dependencies (such as doctrine/common) will also need it.
+    $composer['require']['php'] = '>=7.0';
+
     foreach ($this->lock['packages'] as $package) {
       $composer['require'][$package['name']] = $this->packageToVersion($package);
     }
