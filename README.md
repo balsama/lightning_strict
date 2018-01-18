@@ -34,7 +34,14 @@ you can use this package to pin all of Lightning's dependencies (and their
 dependencies recursively) to the specific versions included in Lightning's
 composer.lock file when it was released.
 
+## PHP Version
+Lightning's dependencies are updated in an environment which runs php 7.0. Since
+this package is directly based on historical Lightning composer.lock files, that
+means that certain dependencies will need at least php 7.0 to run. We've added
+a minimum php vesion to the generated composer.json files. Unfortunately, there
+is no workaround if your environment uses PHP 5.6.
+
 ## Inspiration
-This was inspired by and largely copies most of its code from [webflo's](https://github.com/webflo)
+This was inspired by and heavily borrows code from [webflo's](https://github.com/webflo)
 awesome [drupal-core-strict project](https://github.com/webflo/drupal-core-strict).
 Thank you.
