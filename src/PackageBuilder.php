@@ -32,6 +32,9 @@ class PackageBuilder {
       $composer['require'][$package['name']] = $this->packageToVersion($package);
     }
 
+    // I don't really see any use for the dev dependencies right now, but we
+    // might as well include them since they don't affect the normal use case
+    // and might come in handy someday.
     foreach ($this->lock['packages-dev'] as $package) {
       $composer['require-dev'][$package['name']] = $this->packageToVersion($package);
     }

@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-# Decrypt and add private key.
+# Decrypt and add private key. We need it here to checkout the metapackage and
+# later push to it with an SSH key.
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}

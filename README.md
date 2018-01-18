@@ -6,12 +6,18 @@ specific versions that were used in testing each Lightning release.
 ## Usage
 
 ```
-composer require balsama/lightning_strict:VERSION --no-update
+composer require acquia/lightning:VERSION balsama/lightning_strict:VERSION --no-update
 composer update
 ```
 
+`VERSION` is the specific version of Lightning you want to build. For example,
+`2.2.4`, or `3.0.1`. It should be the same for both the `acquia/lightning` and
+the `balsama/lightning_strict` packagesYou might need to run `composer update`
+more than once for the composer-patches plugin to properly patch all
+dependencies.
+
 ## Motivation
-Lightning 2.2.0 required `drupal/core:~8.4.0` which translates roughly to
+Lightning 2.2.0 required `drupal/core:~8.4.0` which translates roughly to:
 
 > "Give me the most recent version of core lower than 8.5.0"
 
@@ -38,7 +44,7 @@ composer.lock file when it was released.
 Lightning's dependencies are updated in an environment which runs php 7.0. Since
 this package is directly based on historical Lightning composer.lock files, that
 means that certain dependencies will need at least php 7.0 to run. We've added
-a minimum php vesion to the generated composer.json files. Unfortunately, there
+a minimum PHP version to the generated composer.json files. Unfortunately, there
 is no workaround if your environment uses PHP 5.6.
 
 ## Inspiration

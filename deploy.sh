@@ -9,7 +9,8 @@ git reset --hard
 git clean -f -d
 git checkout ${TRAVIS_BRANCH}
 
-# Decrypt and add private key.
+# Decrypt and add private key. We need it so we can push the generated tags and
+# branched to the repo from the CI server.
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
