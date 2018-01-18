@@ -3,6 +3,12 @@ set -e
 
 cd tmp/metapackage
 
+# Clean up after build script and checkout the branch currently being built
+# which should have the encrypted private key.
+git reset --hard
+git clean -f -d
+git checkout ${TRAVIS_BRANCH}
+
 # Decrypt and add private key.
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
