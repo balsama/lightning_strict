@@ -1,13 +1,22 @@
 language: php
+
 php:
-  - 7.2
+- 7.1
+
+branches:
+  only:
+  - master
+  - ci
+
+env:
+  global:
+  - ENCRYPTION_LABEL: "058338dd160c"
+  - COMMIT_AUTHOR_EMAIL: "balsam.adam@gmail.com"
 
 install:
-  - ./checkout.sh
-  - composer install
+- ./checkout.sh
+- composer install
 
 script:
- - php ./build.php
-
-deploy:
- - ./deploy.sh
+- php ./build.php
+- ./deploy.sh
